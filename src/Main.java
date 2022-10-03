@@ -1,21 +1,18 @@
-//W pliku Main01.java napisz metodę o sygnaturze:
-//public static int multiply(int multiplier, int index),
-//która zwróci wartość zmiennej multiplier pomnożonej przez wartość argumentu index.
-
+//W pliku Main02.java napisz metodę o sygnaturze:
+//public static int square(int num),
+//która zwróci wartość num podniesioną do kwadratu.
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Type multipier:");
+        System.out.println("Type number:");
         Scanner scanner = new Scanner(System.in);
-        int multiplier = scanner.nextInt();
-        System.out.println("Type index:");
-        Scanner scanner1 = new Scanner(System.in);
-        int index = scanner1.nextInt();
-        int result = multiply(multiplier,index);
+        int number = scanner.nextInt();
+        int result = square(number);
+        System.out.println("Square:");
         System.out.println(result);
     }
-    public static int multiply(int multiplier, int index){
-        return multiplier*index;
+    public static int square(int num){
+        return num*num;
     }
 }
