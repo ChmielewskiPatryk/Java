@@ -1,26 +1,22 @@
-//W pliku Main08.java napisz publiczną metodę maxOfThree,
-// która przyjmie trzy parametry liczbowe. Metoda ma zwrócić największą liczbę.
+//W pliku Main09.java napisz publiczną metodę factorial, która przyjmie jako parametr liczbę naturalną n.
+//Metoda ma zwrócić wartość n!,czyli wynik mnożenia wszystkich liczb naturalnych w zakresie 1...n.
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Number 1:");
+        System.out.println("Number:");
         Scanner scanner = new Scanner(System.in);
-        int num1 = scanner.nextInt();
-        System.out.println("Number 2:");
-        Scanner scanner2 = new Scanner(System.in);
-        int num2 = scanner2.nextInt();
-        System.out.println("Number 3:");
-        Scanner scanner3 = new Scanner(System.in);
-        int num3 = scanner3.nextInt();
-        int result = maxOfThree(num1, num2, num3);
-        System.out.println("Number is:");
+        int num = scanner.nextInt();
+        int result = factorial(num);
+        System.out.println("Factorial:");
         System.out.println(result);
     }
-    public static int maxOfThree(int num1,int num2,int num3){
-        int max= Math.max(num1,num2);
-        return Math.max(max,num3);
-
+    public static int factorial(int num){
+        int res = 1;
+        for(int i =1;i<=num;i++){
+            res = res * i;
+        }
+        return res;
     }
 }
