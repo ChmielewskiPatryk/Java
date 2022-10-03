@@ -1,26 +1,26 @@
-//W pliku Main04.java napisz publiczną metodę createName, która przyjmie następujące parametry:
-//name: imię,
-//surname: nazwisko,
-//nickname: pseudonim.
-//Metoda ma zwrócić łańcuch tekstowy z połączonymi parametrami, w postaci: "imię pseudonim nazwisko".
+//W pliku Main05.java napisz publiczną metodę calculateNetto, która przyjmie argumenty:
+//gross: kwotę brutto ceny zakupu,
+//vat: wartość podatku VAT. Możesz założyć, że VAT ma być liczbą zmiennoprzecinkową z zakresu 0 – 1.
+//Metoda ma zwrócić wartość netto ceny. Napisz w komentarzu, jakie obliczenia musisz wykonać.
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Name:");
+        System.out.println("Gross:");
         Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        System.out.println("Surname:");
+        double gross = scanner.nextDouble();
+        System.out.println("Vat:");
         Scanner scanner1 = new Scanner(System.in);
-        String surname = scanner1.nextLine();
-        System.out.println("Nickname:");
-        Scanner scanner2 = new Scanner(System.in);
-        String nickname = scanner2.nextLine();
-        String result = createName(name,surname,nickname);
-        System.out.println("Joined string:");
+        double vat = scanner1.nextDouble();
+        double result = calculateNetto(gross,vat);
+        System.out.println("Netto:");
         System.out.println(result);
     }
-    public static String createName(String name, String surname, String nickname){
-        return (name + " " + nickname + " " + surname);
+    public static double calculateNetto(double gross, double vat){
+        //gross = net + net*vat
+        //gross = net(1+ vat)
+        //net = gross/(1+vat)
+
+        return (gross/(1+vat));
     }
 }
