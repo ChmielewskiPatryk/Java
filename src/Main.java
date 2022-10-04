@@ -1,19 +1,31 @@
 
 /*
-public static String[] onlyTwoElements(String str, char separator).
-Uzupełnij ciało metody tak, aby zwracała tablicę dwóch elementów,
-które powstały po podzieleniu tekstu (str) po pierwszym napotkanym znaku podziału (separator).
-Przykład dla napisu Java-zadania-podzial-napisow oraz separatora - otrzymamy:
-pierwszy element tablicy: Java
-drugi element: zadania-podzial-napisow.
+public static int oddSum(int[][] arr).
+Uzupełnij ciało metody tak, aby zliczyła sumę wartości dla wszystkich elementów
+z nieparzystych indeksów dla każdego wiersza.
+Metoda ma zwrócić sumę.
 */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(onlyTwoElements("Java-zadania-podzial-napisow",'-')[0]);
-        System.out.println(onlyTwoElements("Java-zadania-podzial-napisow",'-')[1]);
+        int arr[][] = {
+                {2, 3, 6, 1},
+                {4, 5, 6, 7}
+        };
+        System.out.println(oddSum(arr));
     }
-    public static String[] onlyTwoElements(String str, char separator){
-        String sep = String.valueOf(separator);
-        return str.split(sep,2);
+
+    public static int oddSum(int[][] arr) {
+        int lenArrMain = arr.length;
+        int count = 0;
+
+        for (int i = 0; i < lenArrMain; i++) {
+            int lenArrSub = arr[i].length;
+            for (int j = 0; j < lenArrSub; j++) {
+                if (j % 2 != 0) {
+                    count += arr[i][j];
+                }
+            }
+        }
+        return count;
     }
 }
