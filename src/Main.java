@@ -1,17 +1,19 @@
 
 /*
-public static int charPos(String str, char c) .
-Uzupełnij ciało metody tak, aby zwracała wartość pierwszego indeksu,
-pod którym w napisie str znajduje się znak c.
+public static String firstHalf(String str).
+Uzupełnij ciało metody tak, aby zwracała połowę napisu (uwzględniamy tylko część całkowitą podziału).
+Przykład: dla napisu CodersLab zwróci Code.
 */
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(charPos("Dupa", 'p'));
+        System.out.println(firstHalf("CodersLab"));
 
     }
 
-    static int charPos(String str, char c) {
-        return str.indexOf(c);
+    static String firstHalf(String str) {
+        int length = str.length() / 2;
+        String result = str.substring(0, length);
+        return result;
     }
 }
