@@ -1,19 +1,18 @@
 
 /*
-public static String firstHalf(String str).
-Uzupełnij ciało metody tak, aby zwracała połowę napisu (uwzględniamy tylko część całkowitą podziału).
-Przykład: dla napisu CodersLab zwróci Code.
+public static boolean containsStr(String str, String search).
+Uzupełnij ciało metody tak,
+aby zwracała informację czy zmienna str zawiera w sobie element napisu ze zmiennej search.
 */
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(firstHalf("CodersLab"));
 
+        System.out.println(containsStr("Pies kot dupa", "kot"));
     }
 
-    static String firstHalf(String str) {
-        int length = str.length() / 2;
-        String result = str.substring(0, length);
+    static boolean containsStr(String str, String search) {
+        boolean result = str.contains(search);
         return result;
     }
 }
