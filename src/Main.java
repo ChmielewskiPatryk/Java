@@ -1,18 +1,21 @@
-import java.util.Arrays;
 
 /*
-Wypisz na konsoli ślad macierzy (sumę elementów na głównej przekątnej).
+1. pobierze przedostatnią literę zmiennej str, znajdującej się w pliku,
+2. wyświetli na konsoli liczbę wystąpień tej litery w całym ciągu znaków
 */
 public class Main {
     public static void main(String[] args) {
-        int[][] task4Array = {{2, 3, 4, 6}, {12, 32, 12, 11}, {3, 2, 1, 4}, {5, 1, 6, 7}};
-        int sum = 0;
-        for (int i = 0; i < task4Array.length; i++) {
-            sum += task4Array[i][i];
+        String str = "CodersLab jak dobrze zacząć programować";
+        int strLength = str.length();
+        char getChar = str.charAt(strLength - 2);
+        int count = 0;
+        for (int i = 0; i < strLength - 1; i++) {
+            if (str.charAt(i) == getChar) {
+                count++;
+            }
         }
-        System.out.println(sum);
+        System.out.println(getChar);
+        System.out.println(count);
 
     }
-
-
 }
