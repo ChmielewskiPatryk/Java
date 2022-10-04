@@ -1,14 +1,15 @@
 
 /*
-podzieli na wyrazy ciąg znaków przechowywany w zmiennej str, znajdującej się w pliku,
-wyświetli na konsoli każdy z tych wyrazów w oddzielnej linii.
+podzieli podany ciąg znaków na bohaterów z filmu Powrót do przyszłości – znakiem podziału jest przecinek (,),
+wyświetli na konsoli każdego bohatera w oddzielnej linii.
 */
 public class Main {
     public static void main(String[] args) {
-        String str = "Naucz się programować od podstaw i rozwiń wymarzoną karierę w branży IT.";
-        String[] strSplitted = str.split(" ");
-        for(String stri : strSplitted){
-            System.out.println(stri);
+
+        String str = "Bohater1, Bohater2, Bohater3, Bohater4, Bohater5";
+        String[] splitted = str.split(",");
+        for(String item :splitted){
+            System.out.println(item.trim());
         }
     }
 }
