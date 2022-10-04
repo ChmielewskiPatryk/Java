@@ -6,12 +6,11 @@ wszystkich znaków forReplace przez znaki replacement.
 */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(replaceChar("aaaaaadddaaaa",'a','c'));
+        System.out.println(replaceStr("aa bb dd ee", "aa", "cc"));
     }
-    public static String replaceChar(String str, char forReplace, char replacement){
-        String replace = String.valueOf(forReplace);
-        String replacemen = String.valueOf(replacement);
-        return  str.replaceAll(replace,replacemen);
+
+    public static String replaceStr(String str, String forReplace, String replacement) {
+        return str.replaceAll(forReplace, replacement);
     }
 
 
