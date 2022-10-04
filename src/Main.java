@@ -1,23 +1,22 @@
 import java.util.Arrays;
 
 /*
-1. wypisz długości tablic jednowymiarowych, z których składa się tablica dwuwymiarowa,
-2. wypisz wszystkie elementy tablicy task2Array (musisz użyć do tego zagnieżdżonej pętli for).
+Wypisz na konsoli sumę wszystkich elementów tablicy.
+Oczekiwany wynik to 124.
 */
 public class Main {
     public static void main(String[] args) {
-        int[][] task2Array = {{2, 3, 4}, {12, 32, 12, 11}, {3, 2, 1, 4, 5}, {5, 1, 6, 7, 8}};
-        //1
-        for (int[] item : task2Array) {
-            System.out.println(item.length);
-        }
-        //2
-        for (int[] item : task2Array) {
-            for (int item2 : item) {
-                System.out.print(item2 +",");
+        int[][] task3Array = {{2, 3, 4, 6}, {12, 32, 12, 11}, {3, 2, 1, 4, 5}, {5, 1, 6, 7, 8}};
+        System.out.println(sum(task3Array));
+    }
+    public static int sum(int[][] arr) {
+        int acc = 0;
+        for (int[] singleArr : arr) {
+            for (int item : singleArr) {
+                acc += item;
             }
         }
-
+        return acc;
     }
 
 }
