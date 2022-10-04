@@ -1,7 +1,10 @@
 
 /*
-podzieli podany ciąg znaków na bohaterów z filmu Powrót do przyszłości – znakiem podziału jest przecinek (,),
-wyświetli na konsoli każdego bohatera w oddzielnej linii.
+umieść metodę o sygnaturze public static int countTokens(String str),
+uzupełnij ciało metody tak, aby zwracała liczbę wyrazów w podanym ciągu znaków.
+Metoda powinna pomijać białe znaki.
+
+Przykład: dla String str = " To jest tekst do "; mamy otrzymać wartość 4;
 */
 public class Main {
     public static void main(String[] args) {
