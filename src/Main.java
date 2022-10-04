@@ -1,25 +1,37 @@
 import java.util.Arrays;
 
 /*
-public static boolean contains(int[] arr, int element).
-uzupełnij ciało metody tak, by sprawdzała, czy w tablicy arr istnieje element,
-jeżeli tak ma zwracać true,
-jeżeli nie ma zwracać false.
+public static int[] returnUnique(int[] arr).
+Uzupełnij ciało metody w taki sposób by z tablicy arr wybrała tylko unikalne wartości,
+które następnie mają być zwrócone z metody.
+Przykład dla tablicy [1,1,2,3,3,4], powinniśmy otrzymać [1,2,3,4].
 */
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {2, 5, 6, 7, 8, 9, 3};
-        System.out.println(contains(arr, 1));
+        int[] arr = {1, 4, 3, 1, 2, 3, 3, 4};
+        for (int item : returnUnique(arr)) {
+            System.out.println(item);
+        }
     }
-
-    public static boolean contains(int[] arr, int element) {
-        boolean flag = false;
-        for (int item : arr) {
-            if (item == element) {
-                flag = true;
+// Tu mam raczej przekombinowane
+    public static int[] returnUnique(int[] arr) {
+        Arrays.sort(arr);
+        int newArrLength = 1;
+        for (int i = 0; i < arr.length-1; i++) {
+            if (arr[i] != arr[i + 1]) {
+                newArrLength += 1;
             }
         }
-        return flag;
+        int[] newArr = new int[newArrLength];
+        int count = 1;
+        for (int i = 0; i < arr.length-1; i++) {
+            newArr[0] = arr[0];
+            if (arr[i] != arr[i + 1]) {
+                newArr[count] = arr[i+1];
+                count++;
+            }
+        }
+        return newArr;
     }
 
 }
