@@ -1,18 +1,17 @@
 
 /*
-public static boolean containsStr(String str, String search).
+public static String stringFromArray(String[] str).
 Uzupełnij ciało metody tak,
-aby zwracała informację czy zmienna str zawiera w sobie element napisu ze zmiennej search.
+aby zwracała napis powstały z połączenia wszystkich napisów występujących w tablicy str.
 */
 public class Main {
-
     public static void main(String[] args) {
+        String[] stringArray = {"aaaa", "bbbb", "cccc", "dddd"};
+        System.out.println(stringFromArray(stringArray));
 
-        System.out.println(containsStr("Pies kot dupa", "kot"));
     }
 
-    static boolean containsStr(String str, String search) {
-        boolean result = str.contains(search);
-        return result;
+    static String stringFromArray(String[] str) {
+        return String.join("", str);
     }
 }
