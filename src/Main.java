@@ -1,24 +1,27 @@
 
 /*
-public static String upperCase(String str, int index) .
-Metoda zwraca napis str, w którym znaki zostały zamienione
-na duże z pozycji podzielnych przez index.
+public static int tripple(String str)
+
+Metoda zwraca ilość potrójnych wystąpień znaków w napisie
+Przykład dla qazbbbwsx -> 1, dla aaawsxbbb ->2
 */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(upperCase("którym znaki zostały zamienione na duże z pozycji", 3));
+        System.out.println(tripple("aaawsxbbb"));
+        System.out.println(tripple("qazbbbwsx"));
     }
 
-    public static String upperCase(String str, int index) {
-        char[] arr = str.toCharArray();
+    public static int tripple(String str) {
+        int len = str.length();
+        int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (i % index == 0) {
-                arr[i] = Character.toUpperCase(arr[i]);
+        for (int i = 0; i < len - 2; i++) {
+            if (str.charAt(i) == str.charAt(i + 1) && str.charAt(i + 1) == str.charAt(i + 2)) {
+                count++;
             }
         }
-        return String.valueOf(arr);
-
+        return count;
     }
+
 
 }
