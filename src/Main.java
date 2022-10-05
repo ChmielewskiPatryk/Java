@@ -1,60 +1,33 @@
 
 /*
-public static String encode(String str).
-Uzupełnij ciało metody tak, by zwracała napis zaszyfrowany szyfrem Cezara.
+public static String censor(String str, String[] words).
+Metoda:
+rozbije łańcuch tekstowy na tablicę wyrazów,
+sprawdzi, czy nie znajdują się w nim słowa niedozwolone zawarte w tablicy words,
+jeśli tak -- zamieni je na cztery gwiazdki (****)
+ponownie połączy tablicę w string i zwróci wartość.
 */
 public class Main {
     public static void main(String[] args) {
-        String encoded = encode("DupaZz", 2);
-        System.out.println(encoded);
-        String decoded = decode(encoded, 2);
-        System.out.println(decoded);
-
+        String[] words = {"dupa", "kurwa"};
+        System.out.println(censor("O zesz kurwa dziala elegancko dupa", words));
     }
 
-    public static String decode(String str, int shift) {
-        StringBuilder res = new StringBuilder();
-
-        for (int i = 0; i < str.length(); i++) {
-            if (Character.isUpperCase(str.charAt(i))) {
-                int uni = ((int) str.charAt(i) - shift - 65);
-                if (uni < 0) {
-                    uni = uni + 26;
+    public static String censor(String str, String[] words) {
+        String[] wordsArr = str.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < wordsArr.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if (wordsArr[i].equals(words[j])) {
+                    wordsArr[i] = "****";
                 }
-                char ch = (char) (uni % 26 + 65);
-                res.append(ch);
-            } else {
-                int uni = ((int) str.charAt(i) - shift - 97);
-                if (uni < 0) {
-                    uni = uni + 26;
-                }
-                char ch = (char) (uni % 26 + 97);
-                res.append(ch);
             }
+            sb.append(wordsArr[i]);
+            sb.append(" ");
         }
-        String stringRes = res.toString();
+        String res = sb.toString().trim();
 
-        return stringRes;
 
+        return res;
     }
-
-
-    public static String encode(String str, int shift) {
-        StringBuilder res = new StringBuilder();
-
-        for (int i = 0; i < str.length(); i++) {
-            if (Character.isUpperCase(str.charAt(i))) {
-                char ch = (char) (((int) str.charAt(i) + shift - 65) % 26 + 65);
-                res.append(ch);
-            } else {
-                char ch = (char) (((int) str.charAt(i) + shift - 97) % 26 + 97);
-                res.append(ch);
-            }
-        }
-        String stringRes = res.toString();
-
-        return stringRes;
-    }
-
-
 }
