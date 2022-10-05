@@ -10,14 +10,22 @@ przetestuj ponownie działanie programu.
 */
 public class Main {
     public static void main(String[] args) {
-
+        try {
+            System.out.println(factorial(-1));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Input can not but an negative number");
+        }
     }
 
     static int factorial(int number) {
-        int result = 1;
-        for (int i = 1; i <= number; i++) {
-            result *= i;
+        if (number < 0) {
+            throw new IllegalArgumentException();
+        } else {
+            int result = 1;
+            for (int i = 1; i <= number; i++) {
+                result *= i;
+            }
+            return result;
         }
-        return result;
     }
 }
