@@ -1,31 +1,18 @@
 
 /*
-W pliku Main01.java została umieszczona metoda o sygnaturze: public static int factorial(int number)
-zwracająca silnię liczby naturalnej przekazanej w parametrze.
-zmodyfikuj kod tak, aby metoda zwracała wyjątek IllegalArgumentException w sytuacji, gdy liczba number przekazana w parametrze będzie mniejsza od zera,
-zwróć uwagę czy jest to wyjątek kontrolowany czy niekontrolowany i dlaczego,
-przetestuj działanie programu wywołując metodę factorial z poprawnym i z niepoprawnym parametrem,
-przy wywołaniu metody factorial dodaj obsługę wyjątku IllegalArgumentException,
-przetestuj ponownie działanie programu.
+uruchom program i zaobserwuj jaki wyjątek został rzucony,
+dodaj do kodu obsługę odpowiedniego wyjątku i uruchom ponownie program,
+zwróć uwagę czy jest to wyjątek kontrolowany, czy niekontrolowany i dlaczego.
 */
 public class Main {
     public static void main(String[] args) {
+        int[] tab = {  5, 1, 6, 7, 8 } ;
         try {
-            System.out.println(factorial(-1));
-        } catch (IllegalArgumentException e) {
-            System.out.println("Input can not but an negative number");
+            System.out.println(tab[21]);
+        } catch (ArrayIndexOutOfBoundsException e){
+            //wyjatek niekontrolowalny bo nie trzeba go obslugiwac ale mozna
+            System.out.println("Table is not so long ");
         }
-    }
 
-    static int factorial(int number) {
-        if (number < 0) {
-            throw new IllegalArgumentException();
-        } else {
-            int result = 1;
-            for (int i = 1; i <= number; i++) {
-                result *= i;
-            }
-            return result;
-        }
     }
 }
