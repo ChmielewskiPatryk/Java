@@ -1,21 +1,21 @@
 
 /*
-ustaw breakpoint w miejscu instrukcji int a = 11 / 3; a następnie uruchom program w trybie debugowania,
-zrób krok do przodu aż do końca i zaobserwuj wartości, które przyjmują znajdujące się tam zmienne.
+ustaw breakpoint w linii:
+ b = i < 9995 ? a / i : a * i;
+następnie uruchom program w trybie debugowania.
+wznawiaj program kilka razy, a następnie go zatrzymaj,
+zmodyfikuj breakpoint nadając mu warunek i<3,
+debuguj ponownie program, do momentu wystąpienia wyjątku,
+pozostaw program z błędem.
 */
 public class Main {
     public static void main(String[] args) {
-        int a = 11 / 3;
-
-        int max = Integer.MAX_VALUE;
-
-        int min = Integer.MIN_VALUE;
-
-        int x = max + 1;
-
-        char c = (char)55;
-
-        boolean d = !!true;
+        int a = 10;
+        int b = 0;
+        for (int i = 1000; i >= 0; i--) {
+            b = i < 9995 ? a / i : a * i;
+        }
+        System.out.println(b);
 
     }
 }
