@@ -6,13 +6,16 @@ zmodyfikuj kod tak, aby zabezpieczyć go przed rzuceniem wyjątku,
 */
 public class Main {
     public static void main(String[] args) {
-        showLength(null);
+        try{
+            showLength(null);
+        }catch(NullPointerException e){
+            System.out.println("Can show lenght of NULL");
+        }
     }
 
     static void showLength(String s) {
-        if (s != null) {
             System.out.println(s.length());
-        }
+
     }
 
 }
