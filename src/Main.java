@@ -1,18 +1,23 @@
 
 /*
-zdebuguj, a następnie popraw program tak by zwracał poprawny wynik.
+W pliku Main01.java została umieszczona metoda o sygnaturze: public static int factorial(int number)
+zwracająca silnię liczby naturalnej przekazanej w parametrze.
+zmodyfikuj kod tak, aby metoda zwracała wyjątek IllegalArgumentException w sytuacji, gdy liczba number przekazana w parametrze będzie mniejsza od zera,
+zwróć uwagę czy jest to wyjątek kontrolowany czy niekontrolowany i dlaczego,
+przetestuj działanie programu wywołując metodę factorial z poprawnym i z niepoprawnym parametrem,
+przy wywołaniu metody factorial dodaj obsługę wyjątku IllegalArgumentException,
+przetestuj ponownie działanie programu.
 */
 public class Main {
     public static void main(String[] args) {
-        double avg = calculateAvg(new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97});
-        System.out.println("AVG " + avg);
+
     }
 
-    private static double calculateAvg(int[] input) {
-        double result = 0;
-        for (int element : input) {
-            result += element;
+    static int factorial(int number) {
+        int result = 1;
+        for (int i = 1; i <= number; i++) {
+            result *= i;
         }
-        return result/input.length;
+        return result;
     }
 }
